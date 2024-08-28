@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Imágenes con OpenAI</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f8ff;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 86, 179, 0.2);
+        }
+        label {
+            font-weight: bold;
+            color: #0056b3;
+        }
+        .btn-primary {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .btn-primary:hover {
+            background-color: #004494;
+            border-color: #004494;
+        }
+        h2 {
+            color: #0056b3;
+            text-align: center;
+            margin-top: 30px;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            border: 2px solid #0056b3;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Generador de Imágenes con OpenAI</h1>
+    <form action="/" method="POST">
+        <div class="form-group">
+            <label for="object_to_generate">Objeto o Escena:</label>
+            <input type="text" id="object_to_generate" name="object_to_generate" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="time_of_day">Momento del día:</label>
+            <input type="text" id="time_of_day" name="time_of_day" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="additional_feature">Característica adicional:</label>
+            <input type="text" id="additional_feature" name="additional_feature" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Generar Imagen</button>
+    </form>
+
+    {% if image_url %}
+        <h2>Imagen Generada:</h2>
+        <img src="{{ image_url }}" alt="Generated Image">
+    {% endif %}
+</body>
+</html>
