@@ -1,0 +1,10 @@
+pip install openai
+pip install requests
+pip install pillow
+
+
+client = AzureOpenAI(
+    api_version="",
+    azure_endpoint="",
+    api_key=""
+)
